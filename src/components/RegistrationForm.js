@@ -61,17 +61,31 @@ export default function RegistrationForm() {
     setError('');
   };
 
-  const handleGenerateBelieverID = () => {
+  const handleGenerateBelieverID = async () => {
     if (!formData.state || !formData.country) {
       setError('Please select State/Territory and Country before generating Believer ID');
       return;
     }
 
     try {
-      // In a real application, you might want to fetch the sequence number from the server
-      // For now, we'll generate with a timestamp-based sequence
-      const sequenceNumber = Math.floor(Math.random() * 1000000) + 1;
-      const newBelieverID = generateBelieverID(formData.state, formData.country, sequenceNumber);
+      // Fetch the next sequence number from the server
+      const response = await fetch('/api/auth/get-next-believer-id-sequence', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          state: formData.state,
+          country: formData.country,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to generate Believer ID');
+      }
+
+      const data = await response.json();
+      const newBelieverID = generateBelieverID(formData.state, formData.country, data.sequenceNumber);
       setBelieverID(newBelieverID);
       setShowBelieverID(true);
       setError('');
