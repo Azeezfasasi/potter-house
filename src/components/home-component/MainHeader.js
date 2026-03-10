@@ -211,8 +211,8 @@ export default function MainHeader() {
               </div>
             ) : (
               <>
-                {/* <Link href="/login" className="px-4 py-2 text-sm font-semibold border border-blue-900 hover:border-blue-800 text-gray-900 hover:text-blue-950 rounded-md">Login</Link>
-                <Link href="/request-a-quote" className="px-4 py-2 bg-blue-900 text-white rounded-md text-sm font-medium hover:bg-blue-800">Request Quote</Link> */}
+                <Link href="/login" className="px-4 py-2 text-sm font-semibold border border-purple-900 hover:border-purple-800 text-gray-900 hover:text-blue-950 rounded-md">Login</Link>
+                <Link href="/request-a-quote" className="px-4 py-2 bg-purple-900 text-white rounded-md text-sm font-medium hover:bg-purple-800">Request Quote</Link>
               </>
             )}
           </div>
@@ -224,9 +224,9 @@ export default function MainHeader() {
               aria-label={open ? 'Close menu' : 'Open menu'}
               aria-expanded={open}
               onClick={() => setOpen((s) => !s)}
-              className="relative z-20 flex items-center justify-center w-11 h-11 rounded-lg bg-white/70 backdrop-blur border border-blue-200 shadow-sm"
+              className="relative z-20 flex items-center justify-center w-11 h-11 rounded-lg bg-white/70 backdrop-blur border border-purple-200 shadow-sm"
             >
-              <Menu size={24} className="text-blue-600" /> 
+              <Menu size={24} className="text-purple-600" /> 
             </button>
           </div>
         </div>
@@ -320,8 +320,8 @@ export default function MainHeader() {
                 </>
               ) : (
                 <>
-                  {/* <Link href="/login" onClick={() => setOpen(false)} className="block text-center text-gray-700 border border-blue-500 rounded-md px-4 py-2 hover:text-blue-600">Login</Link>
-                  <Link href="/request-a-quote" onClick={() => setOpen(false)} className="block bg-blue-500 text-white px-4 py-2 rounded-md text-center">Request Quote</Link> */}
+                  <Link href="/login" onClick={() => setOpen(false)} className="block text-center text-gray-700 border border-purple-500 rounded-md px-4 py-2 hover:text-purple-600">Login</Link>
+                  <Link href="/request-a-quote" onClick={() => setOpen(false)} className="block bg-purple-500 text-white px-4 py-2 rounded-md text-center hover:bg-purple-600">Request Quote</Link>
                 </>
               )}
             </div>

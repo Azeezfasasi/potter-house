@@ -10,7 +10,7 @@ export default function DashboardHeader({ onToggleSidebar, onToggleMobileMenu })
   const { user, logout } = useAuth();
   const { notifications, unreadCount } = useNotifications();
   const fullName = user ? `${user.firstName || ''} ${user.lastName || ''}`.trim() : '';
-  const avatar = user && user.avatar ? user.avatar : '/images/profile1.jpg';
+  const avatar = user && user.avatar ? user.avatar : '/img/profileplaceholder.png';
   const role = user?.role ? user.role.replace('-', ' ') : 'User';
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [notificationOpen, setNotificationOpen] = useState(false);
@@ -57,13 +57,13 @@ export default function DashboardHeader({ onToggleSidebar, onToggleMobileMenu })
             <button
               aria-label="Toggle sidebar"
               onClick={onToggleSidebar}
-              className="hidden md:inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900"
+              className="hidden md:inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-900"
             >
               <ArrowRightLeft className="w-6 h-6" />
             </button>
 
             <Link href="/" className="flex items-center gap-3">
-              <Image src="/images/rayobnew.svg" alt="Potter House Logo" width={160} height={40} className="w-14 md:w-16 block rounded-lg p-1" />
+              <Image src="/img/portal1.png" alt="Potter House Logo" width={160} height={60} className="w-14 md:w-24 block rounded-lg p-1" />
             </Link>
           </div>
 

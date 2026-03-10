@@ -43,6 +43,7 @@ export default function ProgrammeRegistrationContent() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  const [programmes, setProgrammes] = useState([]);
 
   // Fetch user data on mount
   useEffect(() => {
@@ -89,6 +90,47 @@ export default function ProgrammeRegistrationContent() {
 
     fetchUserData();
   }, [believerID]);
+
+  // Fetch published programmes
+  useEffect(() => {
+    const fetchProgrammes = async () => {
+      try {
+        const response = await fetch('/api/programmes?status=Published');
+        const data = await response.json();
+
+        if (response.ok && data.programmes) {
+          setProgrammes(data.programmes);
+        }
+      } catch (err) {
+        console.error('Failed to fetch programmes:', err);
+      }
+    };
+
+    fetchProgrammes();
+  }, []);
+
+  // Auto-fill programme details when programme is selected
+  useEffect(() => {
+    if (formData.programmeName && programmes.length > 0) {
+      const selectedProgramme = programmes.find(
+        (prog) => prog.programmeName === formData.programmeName
+      );
+
+      if (selectedProgramme) {
+        setFormData((prev) => ({
+          ...prev,
+          programmeStartDate: selectedProgramme.startDate
+            ? selectedProgramme.startDate.split('T')[0]
+            : '',
+          programmeEndDate: selectedProgramme.endDate
+            ? selectedProgramme.endDate.split('T')[0]
+            : '',
+          programmeDuration: selectedProgramme.duration || '',
+          attendanceMode: selectedProgramme.attendanceMode || '',
+        }));
+      }
+    }
+  }, [formData.programmeName, programmes]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -374,16 +416,21 @@ export default function ProgrammeRegistrationContent() {
                 <label htmlFor="programmeName" className="text-sm font-medium text-gray-700">
                   Programme Name <span className="text-red-600 font-bold">*</span>
                 </label>
-                <input
-                  type="text"
+                <select
                   id="programmeName"
                   name="programmeName"
                   value={formData.programmeName}
                   onChange={handleChange}
-                  placeholder="e.g., Leadership Development Program"
                   className="px-4 py-3 border border-gray-300 rounded-lg text-sm bg-gray-50 transition-all hover:border-gray-500 hover:bg-gray-100 focus:outline-none focus:border-purple-500 focus:bg-white focus:ring-2 focus:ring-purple-200"
                   required
-                />
+                >
+                  <option value="">-- Select a Programme --</option>
+                  {programmes.map((programme) => (
+                    <option key={programme._id} value={programme.programmeName}>
+                      {programme.programmeName}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               {/* Programme Start Date */}
@@ -396,9 +443,8 @@ export default function ProgrammeRegistrationContent() {
                   id="programmeStartDate"
                   name="programmeStartDate"
                   value={formData.programmeStartDate}
-                  onChange={handleChange}
-                  className="px-4 py-3 border border-gray-300 rounded-lg text-sm bg-gray-50 transition-all hover:border-gray-500 hover:bg-gray-100 focus:outline-none focus:border-purple-500 focus:bg-white focus:ring-2 focus:ring-purple-200"
-                  required
+                  disabled
+                  className="px-4 py-3 border border-gray-300 rounded-lg text-sm bg-gray-100 text-gray-700 cursor-not-allowed"
                 />
               </div>
 
@@ -412,8 +458,8 @@ export default function ProgrammeRegistrationContent() {
                   id="programmeEndDate"
                   name="programmeEndDate"
                   value={formData.programmeEndDate}
-                  onChange={handleChange}
-                  className="px-4 py-3 border border-gray-300 rounded-lg text-sm bg-gray-50 transition-all hover:border-gray-500 hover:bg-gray-100 focus:outline-none focus:border-purple-500 focus:bg-white focus:ring-2 focus:ring-purple-200"
+                  disabled
+                  className="px-4 py-3 border border-gray-300 rounded-lg text-sm bg-gray-100 text-gray-700 cursor-not-allowed"
                 />
               </div>
 
@@ -427,9 +473,9 @@ export default function ProgrammeRegistrationContent() {
                   id="programmeDuration"
                   name="programmeDuration"
                   value={formData.programmeDuration}
-                  onChange={handleChange}
+                  disabled
                   placeholder="e.g., 12 weeks"
-                  className="px-4 py-3 border border-gray-300 rounded-lg text-sm bg-gray-50 transition-all hover:border-gray-500 hover:bg-gray-100 focus:outline-none focus:border-purple-500 focus:bg-white focus:ring-2 focus:ring-purple-200"
+                  className="px-4 py-3 border border-gray-300 rounded-lg text-sm bg-gray-100 text-gray-700 cursor-not-allowed"
                 />
               </div>
 
@@ -442,9 +488,8 @@ export default function ProgrammeRegistrationContent() {
                   id="attendanceMode"
                   name="attendanceMode"
                   value={formData.attendanceMode}
-                  onChange={handleChange}
-                  className="px-4 py-3 border border-gray-300 rounded-lg text-sm bg-gray-50 transition-all hover:border-gray-500 hover:bg-gray-100 focus:outline-none focus:border-purple-500 focus:bg-white focus:ring-2 focus:ring-purple-200"
-                  required
+                  disabled
+                  className="px-4 py-3 border border-gray-300 rounded-lg text-sm bg-gray-100 text-gray-700 cursor-not-allowed"
                 >
                   <option value="">Select attendance mode</option>
                   <option value="Online">Online</option>
@@ -537,6 +582,9 @@ export default function ProgrammeRegistrationContent() {
               I agree to the programme terms and conditions and confirm that all information provided is accurate <span className="text-red-600 font-bold">*</span>
             </label>
           </div>
+          
+           {error && <div className="p-4 bg-red-100 border-l-4 border-red-600 text-red-800 rounded-lg text-sm mb-6">{error}</div>}
+           {success && <div className="p-4 bg-green-100 border-l-4 border-green-600 text-green-800 rounded-lg text-sm mb-6">{success}</div>}
 
           {/* Buttons */}
           <div className="flex gap-4 pt-6">
