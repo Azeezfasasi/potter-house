@@ -71,7 +71,7 @@ export const subscribeToNewsletter = async (subscriberData) => {
     try {
       const emailResult = await sendEmailViaBrevo({
         to: email,
-        subject: 'Welcome to Rayob Engineering Newsletter',
+        subject: 'Welcome to Potter House Newsletter',
         htmlContent: `
           <!DOCTYPE html>
           <html>
@@ -88,11 +88,11 @@ export const subscribeToNewsletter = async (subscriberData) => {
             <body>
               <div class="container">
                 <div class="header">
-                  <h1>Welcome to Rayob Engineering Newsletter!</h1>
+                  <h1>Welcome to Potter House Newsletter!</h1>
                 </div>
                 <div class="content">
                   <p>Hi ${firstName || 'there'},</p>
-                  <p>Thank you for subscribing to our newsletter! We're excited to share the latest updates, insights, and innovations from Rayob Engineering.</p>
+                  <p>Thank you for subscribing to our newsletter! We're excited to share the latest updates, insights, and innovations from Potter House.</p>
                   <p>You'll receive:</p>
                   <ul>
                     <li>Latest industry news and trends</li>
@@ -101,21 +101,21 @@ export const subscribeToNewsletter = async (subscriberData) => {
                     <li>Special offers and promotions</li>
                   </ul>
                   <p>If you have any questions or feedback, feel free to reach out to us.</p>
-                  <p>Best regards,<br/>The Rayob Engineering Team</p>
+                  <p>Best regards,<br/>The Potter House Team</p>
                 </div>
                 <div class="footer">
-                  <p>© 2025 Rayob Engineering. All rights reserved.</p>
+                  <p>© 2025 Potter House. All rights reserved.</p>
                   <p><a href="${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/newsletter/unsubscribe?email=${email}">Unsubscribe</a></p>
                 </div>
               </div>
             </body>
           </html>
         `,
-        textContent: `Welcome to Rayob Engineering Newsletter!
+        textContent: `Welcome to Potter House Newsletter!
 
 Hi ${firstName || 'there'},
 
-Thank you for subscribing to our newsletter! We're excited to share the latest updates, insights, and innovations from Rayob Engineering.
+Thank you for subscribing to our newsletter! We're excited to share the latest updates, insights, and innovations from Potter House.
 
 You'll receive:
 - Latest industry news and trends
@@ -126,13 +126,13 @@ You'll receive:
 If you have any questions or feedback, feel free to reach out to us.
 
 Best regards,
-The Rayob Engineering Team
+The Potter House Team
 
 ---
 To unsubscribe: ${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/newsletter/unsubscribe?email=${email}
         `,
-        senderEmail: process.env.BREVO_SENDER_EMAIL || 'noreply@rayobengineering.com',
-        senderName: process.env.BREVO_SENDER_NAME || 'Rayob Engineering',
+        senderEmail: process.env.BREVO_SENDER_EMAIL || 'noreply@potterhouse.com',
+        senderName: process.env.BREVO_SENDER_NAME || 'Potter House',
         tags: ['welcome', 'subscription'],
       });
       

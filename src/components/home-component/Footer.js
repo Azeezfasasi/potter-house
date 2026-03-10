@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container mx-auto px-6 lg:px-20 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {/* Brand / About */}
         <div>
-          <h3 className="text-white text-xl font-bold mb-4">Rayob Engineering</h3>
+          <h3 className="text-white text-xl font-bold mb-4">Potter House</h3>
           <p className="text-gray-400 text-sm leading-relaxed mb-6">
             Delivering innovative, reliable, and cost-effective engineering solutions
             across industrial, commercial, and residential sectors.
@@ -117,8 +117,8 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <Mail size={18} className="text-blue-500" />
-              <a href="mailto:info@rayobengineering.com" className="hover:text-white transition">
-                info@rayobengineering.com
+              <a href="mailto:info@potterhouse.com" className="hover:text-white transition">
+                info@potterhouse.com
               </a>
             </li>
           </ul>
@@ -127,7 +127,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} <span className="text-gray-300 font-medium">Rayob Engineering</span>. 
+        © {new Date().getFullYear()} <span className="text-gray-300 font-medium">Potter House</span>. 
         All rights reserved. | Developed by <a href="https://wa.me/2348117256648" target="_blank" className="text-blue-500">Sense Solutions</a>
       </div>
     </footer>

@@ -45,7 +45,7 @@ const ContactFormResponses = () => {
 					name: 'Mary Johnson',
 					email: 'mary.j@company.com',
 					subject: 'Partnership Opportunity',
-					message: 'We are interested in partnering with Rayob Engineering for upcoming projects...',
+					message: 'We are interested in partnering with Potter House for upcoming projects...',
 					status: 'replied',
 					createdAt: new Date('2025-01-14T14:20:00'),
 					replied: true,
@@ -593,7 +593,7 @@ const ContactFormResponses = () => {
 							<div className="p-6 space-y-4">
 								<div>
 									<label className="block text-sm font-medium text-gray-700 mb-2">From</label>
-									<p className="text-gray-900">admin@rayobengineering.com</p>
+									<p className="text-gray-900">admin@potterhouse.com</p>
 								</div>
 
 								<div>

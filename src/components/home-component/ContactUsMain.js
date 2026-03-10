@@ -95,7 +95,7 @@ export default function ContactUsMain() {
             {/* Location / Map */}
             <div className="rounded-xl overflow-hidden shadow-md h-64 relative">
               <iframe
-                title="Rayob Engineering Location"
+                title="Potter House Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.0951117816845!2d3.202563417718644!3d6.473400600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b869a1c831351%3A0xf2181f6108a8cb34!2sPost%20Service%20Estate%20Ojo%20Lagos!5e0!3m2!1sen!2sng!4v1771002440550!5m2!1sen!2sng"
                 className="w-full h-full border-0"
                 allowFullScreen=""
@@ -124,8 +124,8 @@ export default function ContactUsMain() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="text-blue-900" />
-                <a href="mailto:info@rayobengineering.com" className="hover:text-blue-900 transition">
-                  info@rayobengineering.com
+                <a href="mailto:info@potterhouse.com" className="hover:text-blue-900 transition">
+                  info@potterhouse.com
                 </a>
               </div>
               <div className="flex items-center gap-3">

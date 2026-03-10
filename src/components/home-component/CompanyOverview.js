@@ -8,7 +8,7 @@ const DEFAULT_DATA = {
     title: 'Who We Are',
     image: '/images/fibre1.jpeg',
     paragraphs: [
-      { text: 'Rayob Engineering & Mgt. Co. Ltd is a dynamic, solutions-driven Engineering and Management Company committed to delivering world-class services across multiple sectors. Established in 2020 and legally incorporated in Nigeria in 2025 with a passion for innovation, engineering excellence, and sustainable project delivery.', order: 0 },
+      { text: 'Potter House is a dynamic, solutions-driven Engineering and Management Company committed to delivering world-class services across multiple sectors. Established in 2020 and legally incorporated in Nigeria in 2025 with a passion for innovation, engineering excellence, and sustainable project delivery.', order: 0 },
       { text: 'We bring together nearly two decades of multidisciplinary experience spanning construction, telecommunications, optical fibre implementation, operations and maintenance, project management, corporate governance, and corporate social responsibility.', order: 1 },
       { text: 'The Chairman/CEO is strongly supported by highly experienced professionals in engineering, accounting and finance, law, management, and more. Together, we deliver value, promote excellence, and exceed the expectations of our clients and customers.', order: 2 },
       { text: 'Our goal: to become a trusted African leader in engineering excellence, telecommunications infrastructure development, and strategic project delivery.', order: 3 },
@@ -83,7 +83,7 @@ export default function CompanyOverview() {
               <div className="relative w-full h-64 sm:h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg">
                 <Image
                   src="/images/fibre1.jpeg"
-                  alt="Rayob Engineering Overview"
+                  alt="Potter House Overview"
                   fill
                   sizes="100%"
                   className="object-cover"

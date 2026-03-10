@@ -60,31 +60,6 @@ export default function DashboardMenu({ collapsed, mobileOpen = false, onClose =
   const items = [
     { href: '/dashboard', label: 'Dashboard', icon: 'dashboard', roles: ['admin', 'client', 'staff-member'] },
     {
-      href: '/dashboard/projects',
-      label: 'Projects',
-      icon: 'projects',
-      roles: ['admin', 'staff-member'],
-      children: [
-        { href: '/dashboard/add-projects', label: 'Add Project', roles: ['admin', 'staff-member'] },
-        { href: '/dashboard/all-projects', label: 'All Projects', roles: ['admin', 'staff-member'] }
-      ]
-    },
-    { href: '/projects', label: 'Completed Projects', icon: 'projects', roles: ['client'] },
-    {
-      href: '/dashboard/blog',
-      label: 'Blog',
-      icon: 'blog',
-      roles: ['admin', 'staff-member'],
-      children: [
-        { href: '/dashboard/add-blog', label: 'Add Blog', roles: ['admin', 'staff-member'] },
-        { href: '/dashboard/manage-blog', label: 'Manage Blogs', roles: ['admin', 'staff-member'] }
-      ]
-    },
-    { href: '/blog', label: 'View Blogs', icon: 'dashboard', roles: ['client'] },
-    { href: '/dashboard/contact-form-responses', label: 'Contact Form Responses', icon: 'Contact', roles: ['admin', 'staff-member'] },
-    { href: '/request-a-quote', label: 'Request Quote', icon: 'dashboard', roles: ['client'] },
-    { href: '/dashboard/quote-requests', label: 'Quote Requests', icon: 'Quote Requests', roles: ['admin', 'staff-member'] },
-    {
       href: '/dashboard/users',
       label: 'Manage Users',
       icon: 'Users',
@@ -106,43 +81,7 @@ export default function DashboardMenu({ collapsed, mobileOpen = false, onClose =
         { href: '/dashboard/subscribers', label: 'Subscribers', roles: ['admin', 'staff-member'] },
       ]
     },
-    {
-      href: '/dashboard/gallery',
-      label: 'Gallery Management',
-      icon: 'Gallery',
-      roles: ['admin', 'staff-member'],
-      children: [
-        { href: '/dashboard/add-gallery', label: 'Add Gallery', roles: ['admin', 'staff-member'] },
-        { href: '/dashboard/all-gallery', label: 'All Gallery', roles: ['admin', 'staff-member'] },
-      ]
-    },
-    { href: '/gallery', label: 'Our Gallery', icon: 'projects', roles: ['client'] },
     { href: '/dashboard/my-profile', label: 'Profile', icon: 'dashboard', roles: ['admin', 'client', 'staff-member'] },
-    {
-      href: '/dashboard/home',
-      label: 'Homepage Contents',
-      icon: 'Gallery',
-      roles: ['admin', 'staff-member'],
-      children: [
-        { href: '/dashboard/hero-slider', label: 'Hero Slider', roles: ['admin', 'staff-member'] },
-        { href: '/dashboard/home-cta', label: 'Home CTA', roles: ['admin', 'staff-member'] },
-        { href: '/dashboard/our-services-contents', label: 'Our Services', roles: ['admin', 'staff-member'] },
-        { href: '/dashboard/our-clients', label: 'Our Clients & Partners', roles: ['admin', 'staff-member'] },
-        { href: '/dashboard/testimonials', label: 'Testimonials', roles: ['admin', 'staff-member'] },
-        { href: '/dashboard/why-rayob', label: 'Why Rayob', roles: ['admin', 'staff-member'] },
-      ]
-    },
-    {
-      href: '/dashboard/about-page',
-      label: 'About Page Contents',
-      icon: 'Gallery',
-      roles: ['admin', 'staff-member'],
-      children: [
-        { href: '/dashboard/company-overview', label: 'Company Overview', roles: ['admin', 'staff-member'] },
-        { href: '/dashboard/history-milestones', label: 'History & Milestones', roles: ['admin', 'staff-member'] },
-        { href: '/dashboard/team-section', label: 'Our Team Manager', roles: ['admin', 'staff-member'] },
-      ]
-    },
   ]
 
    // Helper function to check if user has access to item
@@ -227,7 +166,7 @@ export default function DashboardMenu({ collapsed, mobileOpen = false, onClose =
         <div className="h-full overflow-y-auto py-6 px-4">
           <div className="flex items-center justify-between mb-6">
             <Link href="/" className="flex flex-col items-center gap-3">
-              <Image src="/images/rayob.svg" alt="Rayob Logo" width={170} height={50} className="w-35 block rounded-md" />
+              <Image src="/images/rayob.svg" alt="Potter House Logo" width={170} height={50} className="w-35 block rounded-md" />
             </Link>
             <button aria-label="Close menu" onClick={onClose} className="p-2 rounded-md text-red-600 hover:bg-gray-100">
               <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor">

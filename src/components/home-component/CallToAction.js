@@ -12,7 +12,7 @@ export default function CallToAction() {
 
         {/* Description */}
         <p className="text-blue-100 max-w-2xl mx-auto mb-8">
-          Partner with <span className="font-semibold">Rayob Engineering & Mgt. Co. Ltd</span> for
+          Partner with <span className="font-semibold">Potter House</span> for
           innovative, reliable, and cost-effective engineering solutions.
           Let’s bring your ideas to life, on time and within budget.
         </p>
