@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
-import DashboardStats from "@/components/dashboard-component/DashboardStats";
+// import DashboardStats from "@/components/dashboard-component/DashboardStats";
 import DashboardWelcome from "@/components/dashboard-component/DashboardWelcome";
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { Commet } from "react-loading-indicators";
-import QuoteChart from "@/components/dashboard-component/QuoteChart";
-import UserChart from "@/components/dashboard-component/UserChart";
+// import QuoteChart from "@/components/dashboard-component/QuoteChart";
+// import UserChart from "@/components/dashboard-component/UserChart";
 
 export default function Dashboard() {
   const { isAuthenticated, loading } = useAuth();
@@ -31,7 +31,7 @@ export default function Dashboard() {
     <>
       <DashboardWelcome />
 
-      {user?.role === 'admin' ? (
+      {/* {user?.role === 'admin' ? (
         <>
         <DashboardStats />
         <div className="flex flex-col lg:flex-row gap-6 justify-center mt-6">
@@ -39,7 +39,7 @@ export default function Dashboard() {
           <UserChart />
         </div>
         </>
-      ) : null}
+      ) : null} */}
     </>
   );
 }

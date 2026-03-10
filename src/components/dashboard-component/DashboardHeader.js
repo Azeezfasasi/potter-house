@@ -116,7 +116,7 @@ export default function DashboardHeader({ onToggleSidebar, onToggleMobileMenu })
                     </li>
                     {user?.role === 'admin' || user?.role === 'staff-member' ? (
                     <li>
-                      <Link href="/dashboard/all-projects" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition w-full text-left">Manage Projects</Link>
+                      <Link href="/dashboard/all-programmes" className="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition w-full text-left">Manage Programmes</Link>
                     </li>
                     ) : null}
                     {user?.role === 'admin' || user?.role === 'staff-member' ? (
