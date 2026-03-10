@@ -27,7 +27,6 @@ const userSchema = new mongoose.Schema(
         },
         message: "Invalid email address",
       },
-      index: true,
     },
     phone: {
       type: String,
@@ -180,8 +179,7 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Index for frequently queried fields
-userSchema.index({ email: 1 });
+// Indexes for frequently queried fields
 userSchema.index({ role: 1 });
 userSchema.index({ isActive: 1 });
 userSchema.index({ createdAt: -1 });
