@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
+import { BarChart, Bar, PieChart, Pie, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
 import axios from 'axios';
 import { useAuth } from '@/context/AuthContext';
 
@@ -105,48 +105,81 @@ export default function UserChart() {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 border border-gray-300 w-full lg:w-[48%]">
+    <div className="bg-white rounded-lg shadow-md p-6 border border-purple-300 w-full">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">User Roles Distribution</h2>
       
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart
-          data={data}
-          margin={{ top: 20, right: 30, left: 0, bottom: 20 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
-          <XAxis 
-            dataKey="role"
-            stroke="#6B7280"
-            style={{ fontSize: '14px' }}
-          />
-          <YAxis 
-            stroke="#6B7280"
-            style={{ fontSize: '14px' }}
-          />
-          <Tooltip
-            contentStyle={{
-              backgroundColor: '#fff',
-              border: '1px solid #ccc',
-              borderRadius: '8px',
-              padding: '10px',
-            }}
-            formatter={(value) => [`${value} users`, 'Count']}
-          />
-          <Legend 
-            wrapperStyle={{ paddingTop: '20px' }}
-            height={36}
-          />
-          <Bar
-            dataKey="count"
-            name="Number of Users"
-            radius={[8, 8, 0, 0]}
-          >
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={entry.fill} />
-            ))}
-          </Bar>
-        </BarChart>
-      </ResponsiveContainer>
+      {/* Charts Container */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        {/* Bar Chart */}
+        <div>
+          <h3 className="text-lg font-semibold text-gray-700 mb-4">Bar Chart View</h3>
+          <ResponsiveContainer width="100%" height={350}>
+            <BarChart
+              data={data}
+              margin={{ top: 20, right: 30, left: 0, bottom: 20 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+              <XAxis 
+                dataKey="role"
+                stroke="#6B7280"
+                style={{ fontSize: '14px' }}
+              />
+              <YAxis 
+                stroke="#6B7280"
+                style={{ fontSize: '14px' }}
+              />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: '#fff',
+                  border: '1px solid #ccc',
+                  borderRadius: '8px',
+                  padding: '10px',
+                }}
+                formatter={(value) => [`${value} users`, 'Count']}
+              />
+              <Legend 
+                wrapperStyle={{ paddingTop: '20px' }}
+                height={36}
+              />
+              <Bar
+                dataKey="count"
+                name="Number of Users"
+                radius={[8, 8, 0, 0]}
+              >
+                {data.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.fill} />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* Pie Chart */}
+        <div>
+          <h3 className="text-lg font-semibold text-gray-700 mb-4">Pie Chart View</h3>
+          <ResponsiveContainer width="100%" height={350}>
+            <PieChart>
+              <Pie
+                data={data}
+                dataKey="count"
+                nameKey="role"
+                cx="50%"
+                cy="50%"
+                outerRadius={100}
+                label={({ role, count }) => `${role}: ${count}`}
+              >
+                {data.map((entry, index) => (
+                  <Cell key={`pie-cell-${index}`} fill={entry.fill} />
+                ))}
+              </Pie>
+              <Tooltip
+                formatter={(value) => [`${value} users`, 'Count']}
+              />
+              <Legend />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
 
       {/* Summary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">

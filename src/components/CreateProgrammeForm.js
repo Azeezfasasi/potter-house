@@ -140,12 +140,12 @@ export default function CreateProgrammeForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-slate-100 p-4 md:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 to-slate-200 p-4 md:p-8 rounded-lg shadow-md">
       <div className="max-w-4xl mx-auto">
         {authLoading ? (
           <div className="bg-white rounded-lg shadow-lg p-8 flex items-center justify-center">
             <div className="text-center">
-              <div className="inline-block w-8 h-8 border-4 border-blue-300 border-t-blue-600 rounded-full animate-spin"></div>
+              <div className="inline-block w-8 h-8 border-4 border-purple-300 border-t-purple-600 rounded-full animate-spin"></div>
               <p className="text-gray-600 mt-4">Loading user information...</p>
             </div>
           </div>
@@ -153,14 +153,14 @@ export default function CreateProgrammeForm() {
           <div className="bg-white rounded-lg shadow-lg p-8">
             <div className="text-center">
               <p className="text-red-600 font-semibold mb-4">Please login to create a programme</p>
-              <a href="/login" className="text-blue-600 hover:text-blue-800 font-semibold">
+              <a href="/login" className="text-purple-600 hover:text-purple-800 font-semibold">
                 Go to Login
               </a>
             </div>
           </div>
         ) : (
           <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Create New Programme</h1>
+            <h1 className="text-[18px] md:text-[24px] font-bold text-gray-800 mb-2">Create New Programme</h1>
             <p className="text-gray-600 mb-8">Fill in the details below to create a new programme</p>
 
             <form onSubmit={handleSubmit} method="POST" className="space-y-6">
@@ -190,7 +190,7 @@ export default function CreateProgrammeForm() {
                 value={formData.programmeName}
                 onChange={handleChange}
                 placeholder="e.g., Advanced Python Programming"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
                 disabled={loading}
               />
             </div>
@@ -207,7 +207,7 @@ export default function CreateProgrammeForm() {
                 onChange={handleChange}
                 placeholder="Describe the programme..."
                 rows="4"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition resize-none"
                 disabled={loading}
               />
             </div>
@@ -225,7 +225,7 @@ export default function CreateProgrammeForm() {
                   name="startDate"
                   value={formData.startDate}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
                   disabled={loading}
                 />
               </div>
@@ -241,7 +241,7 @@ export default function CreateProgrammeForm() {
                   name="endDate"
                   value={formData.endDate}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
                   disabled={loading}
                 />
               </div>
@@ -249,9 +249,9 @@ export default function CreateProgrammeForm() {
 
             {/* Duration (Auto-calculated, Read-only) */}
             {duration && (
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
                 <p className="text-sm font-semibold text-gray-700">
-                  Duration: <span className="text-blue-600 font-bold">{duration}</span>
+                  Duration: <span className="text-purple-600 font-bold">{duration}</span>
                 </p>
               </div>
             )}
@@ -266,7 +266,7 @@ export default function CreateProgrammeForm() {
                 name="attendanceMode"
                 value={formData.attendanceMode}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
                 disabled={loading}
               >
                 <option value="Online">Online</option>
@@ -288,7 +288,7 @@ export default function CreateProgrammeForm() {
                   value={formData.location}
                   onChange={handleChange}
                   placeholder="e.g., Lagos Office, Room 101"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
                   disabled={loading}
                 />
               </div>
@@ -307,7 +307,7 @@ export default function CreateProgrammeForm() {
                 onChange={handleChange}
                 placeholder="e.g., 50"
                 min="1"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
                 disabled={loading}
               />
             </div>
@@ -324,7 +324,7 @@ export default function CreateProgrammeForm() {
                 onChange={handleChange}
                 placeholder="Outline the course content..."
                 rows="3"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition resize-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition resize-none"
                 disabled={loading}
               />
             </div>
@@ -341,7 +341,7 @@ export default function CreateProgrammeForm() {
                 value={formData.requirements}
                 onChange={handleChange}
                 placeholder="e.g., Basic Python, 2 years experience, Laptop"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition"
                 disabled={loading}
               />
               <p className="text-xs text-gray-500 mt-1">Separate multiple requirements with commas</p>
@@ -366,7 +366,7 @@ export default function CreateProgrammeForm() {
               <button
                 type="submit"
                 disabled={loading}
-                className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-gray-400 disabled:to-gray-400 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 flex items-center justify-center gap-2"
+                className="flex-1 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 disabled:from-gray-400 disabled:to-gray-400 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 flex items-center justify-center gap-2"
               >
                 {loading ? (
                   <>

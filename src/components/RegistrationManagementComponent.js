@@ -201,11 +201,11 @@ export default function RegistrationManagementComponent() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-100 to-purple-50 p-6 sm:p-10 mt-[80px] pb-10">
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 to-purple-50 p-6 sm:p-10 mt-[0px] pb-10 rounded-lg shadow-md">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Programme Registrations</h1>
+          <h1 className="text-[18px] sm:text-[24px] font-bold text-gray-900 mb-2">Programme Registrations</h1>
           <p className="text-gray-600">Manage and track all programme registration applications</p>
         </div>
 

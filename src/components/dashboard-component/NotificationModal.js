@@ -21,19 +21,19 @@ export default function NotificationModal({ isOpen, onClose, notifications, unre
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-900 to-blue-800 px-6 py-6 text-white">
+          <div className="bg-gradient-to-r from-purple-900 to-purple-800 px-6 py-6 text-white">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-2xl font-bold">Notifications</h2>
                 {unreadCount > 0 && (
-                  <p className="text-blue-100 text-sm mt-1">
+                  <p className="text-purple-100 text-sm mt-1">
                     {unreadCount} pending {unreadCount === 1 ? 'item' : 'items'}
                   </p>
                 )}
               </div>
               <button
                 onClick={onClose}
-                className="text-white hover:bg-blue-700 p-2 rounded-full transition-colors duration-200"
+                className="text-white hover:bg-purple-700 p-2 rounded-full transition-colors duration-200"
                 aria-label="Close notifications"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,7 +61,7 @@ export default function NotificationModal({ isOpen, onClose, notifications, unre
                     href={notification.link}
                     onClick={onClose}
                   >
-                    <div className="px-6 py-4 hover:bg-gray-50 transition-colors duration-150 cursor-pointer border-l-4 border-transparent hover:border-blue-900">
+                    <div className="px-6 py-4 hover:bg-gray-50 transition-colors duration-150 cursor-pointer border-l-4 border-transparent hover:border-purple-900">
                       <div className="flex items-start gap-4">
                         <div className="text-3xl flex-shrink-0">{notification.icon}</div>
                         <div className="flex-1 min-w-0">
@@ -88,7 +88,7 @@ export default function NotificationModal({ isOpen, onClose, notifications, unre
               <Link
                 href="/dashboard/quote-requests"
                 onClick={onClose}
-                className="inline-flex items-center gap-2 text-blue-900 hover:text-blue-800 font-semibold text-sm transition-colors duration-200"
+                className="inline-flex items-center gap-2 text-purple-900 hover:text-purple-800 font-semibold text-sm transition-colors duration-200"
               >
                 View All Pending Items
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

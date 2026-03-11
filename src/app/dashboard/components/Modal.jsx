@@ -48,7 +48,7 @@ export default function Modal({ isOpen, title, children, onClose, onConfirm, con
               className={`px-4 py-2 text-sm font-medium text-white rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed ${
                 isDangerous
                   ? 'bg-red-600 hover:bg-red-700'
-                  : 'bg-blue-600 hover:bg-blue-700'
+                  : 'bg-purple-600 hover:bg-purple-700'
               }`}
             >
               {isLoading ? 'Loading...' : confirmText}

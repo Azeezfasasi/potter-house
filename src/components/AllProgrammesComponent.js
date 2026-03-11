@@ -131,19 +131,19 @@ export default function AllProgrammesComponent() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-slate-100 p-4 md:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 to-purple-200 p-4 md:p-8 rounded-lg shadow-md">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
           <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800">All Programmes</h1>
+            <h1 className="text-[18px] md:text-[24px] font-bold text-gray-800">All Programmes</h1>
             <p className="text-gray-600 mt-2">
               Total: <span className="font-semibold">{pagination.totalCount}</span> programmes
             </p>
           </div>
           <Link
             href="/dashboard/create-programme"
-            className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 text-center"
+            className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 text-center text-[15px]"
           >
             + Create New Programme
           </Link>
@@ -163,7 +163,7 @@ export default function AllProgrammesComponent() {
                 name="status"
                 value={filters.status}
                 onChange={handleFilterChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
               >
                 <option value="">All Statuses</option>
                 <option value="Draft">Draft</option>
@@ -184,7 +184,7 @@ export default function AllProgrammesComponent() {
                 name="attendanceMode"
                 value={filters.attendanceMode}
                 onChange={handleFilterChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
               >
                 <option value="">All Modes</option>
                 <option value="Online">Online</option>
@@ -205,7 +205,7 @@ export default function AllProgrammesComponent() {
         {/* Loading State */}
         {loading ? (
           <div className="bg-white rounded-lg shadow-md p-8 text-center">
-            <div className="inline-block w-8 h-8 border-4 border-blue-300 border-t-blue-600 rounded-full animate-spin"></div>
+            <div className="inline-block w-8 h-8 border-4 border-purple-300 border-t-purple-600 rounded-full animate-spin"></div>
             <p className="text-gray-600 mt-4">Loading programmes...</p>
           </div>
         ) : programmes.length === 0 ? (
@@ -221,7 +221,7 @@ export default function AllProgrammesComponent() {
               {programmes.map((programme) => (
                 <div key={programme._id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-200 overflow-hidden flex flex-col">
                   {/* Card Header */}
-                  <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 text-white">
+                  <div className="bg-gradient-to-r from-purple-500 to-purple-600 p-4 text-white">
                     <h3 className="text-lg font-bold truncate">{programme.programmeName}</h3>
                     <div className="flex gap-2 mt-2">
                       <span className={`text-xs px-2 py-1 rounded-full font-semibold ${getStatusColor(programme.status)}`}>
@@ -245,7 +245,7 @@ export default function AllProgrammesComponent() {
                         <span className="text-gray-500 font-medium min-w-fit">📅 Dates:</span>
                         <div>
                           <p className="text-gray-700">{formatDate(programme.startDate)} - {formatDate(programme.endDate)}</p>
-                          <p className="text-blue-600 font-semibold">{programme.duration}</p>
+                          <p className="text-purple-600 font-semibold">{programme.duration}</p>
                         </div>
                       </div>
 
@@ -283,7 +283,7 @@ export default function AllProgrammesComponent() {
                   <div className="bg-gray-50 p-4 flex gap-2">
                     <button
                       onClick={() => router.push(`/dashboard/all-programmes/${programme._id}`)}
-                      className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 text-sm"
+                      className="flex-1 bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 text-sm"
                     >
                       View
                     </button>
@@ -347,7 +347,7 @@ export default function AllProgrammesComponent() {
                     onClick={() => fetchProgrammes(page)}
                     className={`px-3 py-2 rounded-lg font-semibold ${
                       pagination.currentPage === page
-                        ? 'bg-blue-600 text-white'
+                        ? 'bg-purple-600 text-white'
                         : 'border border-gray-300 hover:bg-gray-50'
                     }`}
                   >

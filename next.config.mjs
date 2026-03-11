@@ -9,6 +9,12 @@ const nextConfig = {
       },
     ],
   },
+  // Turbopack configuration for development
+  turbopack: {
+    resolveAlias: {
+      '@': './src',
+    },
+  },
   /* config options here */
 };
 

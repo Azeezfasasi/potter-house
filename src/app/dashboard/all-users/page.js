@@ -267,15 +267,15 @@ export default function AllUsersPage() {
           placeholder="Search by name or email"
           value={search}
           onChange={e => { setSearch(e.target.value); setPage(1); }}
-          className="border px-3 py-2 rounded-lg w-64 outline-none border-gray-400 focus:ring-2 focus:ring-blue-500 text-[14px] md:text-base"
+          className="border px-3 py-2 rounded-lg w-64 outline-none border-gray-400 focus:ring-2 focus:ring-purple-500 text-[14px] md:text-base"
         />
-        <select value={role} onChange={e => { setRole(e.target.value); setPage(1); }} className="border px-3 py-2 rounded-lg outline-none border-gray-400 focus:ring-2 focus:ring-blue-500 text-[14px] md:text-base">
+        <select value={role} onChange={e => { setRole(e.target.value); setPage(1); }} className="border px-3 py-2 rounded-lg outline-none border-gray-400 focus:ring-2 focus:ring-purple-500 text-[14px] md:text-base">
           <option value="">All Roles</option>
           <option value="client">Client</option>
           <option value="admin">Admin</option>
           <option value="staff-member">Staff Member</option>
         </select>
-        <select value={status} onChange={e => { setStatus(e.target.value); setPage(1); }} className="border px-3 py-2 rounded-lg outline-none border-gray-400 focus:ring-2 focus:ring-blue-500 text-[14px] md:text-base">
+        <select value={status} onChange={e => { setStatus(e.target.value); setPage(1); }} className="border px-3 py-2 rounded-lg outline-none border-gray-400 focus:ring-2 focus:ring-purple-500 text-[14px] md:text-base">
           <option value="">All Status</option>
           <option value="true">Active</option>
           <option value="false">Inactive</option>
@@ -328,7 +328,7 @@ export default function AllUsersPage() {
                     </span>
                   </td>
                   <td className="px-4 py-2 flex gap-2 text-[14px] md:text-base">
-                    <button onClick={() => handleEdit(user)} className="px-2 py-1 md:py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-xs text-nowrap cursor-pointer">Edit</button>
+                    <button onClick={() => handleEdit(user)} className="px-2 py-1 md:py-2 bg-purple-600 text-white rounded hover:bg-purple-700 text-xs text-nowrap cursor-pointer">Edit</button>
                     <button onClick={() => handleChangeRole(user)} className="px-2 py-1 md:py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 text-xs text-nowrap cursor-pointer">Change Role</button>
                     <button onClick={() => handleChangeStatus(user)} className="px-2 py-1 md:py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 text-xs text-nowrap cursor-pointer">Change Status</button>
                     <button onClick={() => handleDelete(user)} className="px-2 py-1 md:py-2 bg-red-600 text-white rounded hover:bg-red-700 text-xs text-nowrap cursor-pointer">Delete</button>
@@ -374,7 +374,7 @@ export default function AllUsersPage() {
                   type="text"
                   value={editForm.firstName}
                   onChange={(e) => setEditForm({ ...editForm, firstName: e.target.value })}
-                  className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-purple-500"
                 />
               </div>
               <div>
@@ -383,7 +383,7 @@ export default function AllUsersPage() {
                   type="text"
                   value={editForm.lastName}
                   onChange={(e) => setEditForm({ ...editForm, lastName: e.target.value })}
-                  className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-purple-500"
                 />
               </div>
               <div>
@@ -392,7 +392,7 @@ export default function AllUsersPage() {
                   type="email"
                   value={editForm.email}
                   onChange={(e) => setEditForm({ ...editForm, email: e.target.value })}
-                  className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-purple-500"
                 />
               </div>
               <div>
@@ -401,42 +401,42 @@ export default function AllUsersPage() {
                   type="tel"
                   value={editForm.phone}
                   onChange={(e) => setEditForm({ ...editForm, phone: e.target.value })}
-                  className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-purple-500"
                 />
               </div>
-              <div>
+              {/* <div>
                 <label className="block text-sm font-medium mb-1">Company</label>
                 <input
                   type="text"
                   value={editForm.company}
                   onChange={(e) => setEditForm({ ...editForm, company: e.target.value })}
-                  className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-purple-500"
                 />
-              </div>
-              <div>
+              </div> */}
+              {/* <div>
                 <label className="block text-sm font-medium mb-1">Department</label>
                 <input
                   type="text"
                   value={editForm.department}
                   onChange={(e) => setEditForm({ ...editForm, department: e.target.value })}
-                  className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-purple-500"
                 />
-              </div>
-              <div>
+              </div> */}
+              {/* <div>
                 <label className="block text-sm font-medium mb-1">Position</label>
                 <input
                   type="text"
                   value={editForm.position}
                   onChange={(e) => setEditForm({ ...editForm, position: e.target.value })}
-                  className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-purple-500"
                 />
-              </div>
+              </div> */}
             </div>
             <div className="mt-6 flex gap-3">
               <button
                 onClick={submitEditUser}
                 disabled={editModal.loading}
-                className="flex-1 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50"
+                className="flex-1 bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 disabled:opacity-50"
               >
                 {editModal.loading ? "Saving..." : "Save"}
               </button>
@@ -525,7 +525,7 @@ export default function AllUsersPage() {
               <select
                 value={roleModal.newRole}
                 onChange={(e) => setRoleModal({ ...roleModal, newRole: e.target.value })}
-                className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-3 py-2 border rounded-lg outline-none focus:ring-2 focus:ring-purple-500"
               >
                 <option value="">-- Select Role --</option>
                 <option value="client">Client</option>
@@ -537,7 +537,7 @@ export default function AllUsersPage() {
               <button
                 onClick={submitChangeRole}
                 disabled={roleModal.loading || !roleModal.newRole}
-                className="flex-1 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 disabled:opacity-50"
+                className="flex-1 bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 disabled:opacity-50"
               >
                 {roleModal.loading ? "Updating..." : "Update Role"}
               </button>
